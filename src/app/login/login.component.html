@@ -1,0 +1,22 @@
+<div class="login-form-container">
+  <span class="form-title" >Log in</span>
+  <form [formGroup]="loginForm" class="login-form" (ngSubmit)="login()">
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" placeholder="username"  [formControlName]="'username'" >
+      <mat-error *ngIf="formControls.username?.errors?.required">Username is required</mat-error>
+      <mat-error *ngIf="formControls.username?.errors?.pattern">Username should be english letters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="isPasswordHide ? 'password' : 'text'" placeholder="password"  [formControlName]="'password'" >
+      <button mat-icon-button matSuffix (click)="isPasswordHide = !isPasswordHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="isPasswordHide">
+        <mat-icon>{{isPasswordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="formControls.password?.errors?.required">Password is required</mat-error>
+    </mat-form-field>
+    <button  mat-raised-button color="primary" type="submit" >Log in</button>
+  </form>
+
+</div>

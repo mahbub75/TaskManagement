@@ -9,7 +9,13 @@
 }
 .error-code{
   font-size: 11rem;
+  @media (max-width: 576px) {
+    font-size: 5rem;
+  }
 }
 .error-desc{
   font-size: 3rem;
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 }

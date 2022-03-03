@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {AuthenticationService} from "../core/authentication.service";
 import {Router} from "@angular/router";
+import {Role} from "../core/models/role.enum";
 
 @Component({
   selector: 'app-login',
@@ -30,12 +31,9 @@ isPasswordHide = true;
     const password = this.loginForm.get('password')?.value;
     const isUserValid = this.authService.isUserAuthValid(username, password);
     if (isUserValid){
-      const user = this.authService.user;
-      this.router.navigate(['/' + user.role]);
-    } else {
-
+      const userRole = this.authService.userRole;
+      const nextPage =  userRole === Role.Admin ? 'admin' : 'task';
+      this.router.navigate(['/' + nextPage]);
     }
-
-
   }
 }

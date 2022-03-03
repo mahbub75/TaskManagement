@@ -7,7 +7,7 @@ import {Role} from "./models/role.enum";
 })
 export class AuthenticationService {
   private readonly userStorageKey = 'User';
-  private _user?: User;
+  private _user?: User  ;
 
   users: User[] = [
     {username: 'admin', password: '123?', role: Role.Admin},
@@ -20,11 +20,11 @@ export class AuthenticationService {
 
   get user(): User {
     let user = this._user;
-    if(!user){
-      const userStr = localStorage.getItem(this.userStorageKey) || '';
-      user = JSON.parse(userStr) as User;
+    if (!user) {
+      const userStr = localStorage.getItem(this.userStorageKey);
+        user = userStr ? JSON.parse(userStr) : undefined ;
     }
-    return user;
+    return user as User ;
   }
 
   set user(user: User) {

@@ -7,7 +7,7 @@ import {Role} from "./models/role.enum";
 })
 export class AuthenticationService {
   private readonly userStorageKey = 'User';
-  private _user?: User | null;
+  private _user?: User;
 
   users: User[] = [
     {username: 'admin', password: '123?', role: Role.Admin},
@@ -34,7 +34,10 @@ export class AuthenticationService {
   }
 
   isUserAuthValid(username: string, password: string): boolean {
-   const user = this.users.find((user)=>{user.username === username && user.password === password})
+    const user = this.users.find(user =>
+      user.username === username
+      &&
+      user.password === password)
     return !!user;
   }
 
@@ -45,8 +48,9 @@ export class AuthenticationService {
   get isLogedin(): boolean {
     return !!(this._user);
   }
-  logout(){
-    this._user = null;
+
+  logout() {
+    this._user = undefined;
     localStorage.removeItem(this.userStorageKey);
   }
 }

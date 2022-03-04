@@ -1,0 +1,71 @@
+{
+  "ToDo": [
+
+    {
+      "id": "10",
+      "caption": "Lorem ipsum dolor sit amet",
+      "cover": "https://www.psohub.com/hs-fs/hubfs/Blog%20visuals/General/General_05_541x290.png?width=530&name=General_05_541x290.png",
+      "isCompleted": true
+    },
+    {
+      "id": "11",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "cover": "https://miro.medium.com/max/1400/0*F5B5nvKIEkoEXkI9",
+      "isCompleted": true
+    },
+    {
+      "id": "12",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "cover": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2020/09/GoogleTasksAppList-iPhone.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5",
+      "isCompleted": false
+    },
+    {
+      "id": "13",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "cover": "https://media-exp1.licdn.com/dms/image/C561BAQEiyvY1EaX42w/company-background_10000/0/1585938838806?e=2147483647&v=beta&t=6IDOxsL__EDJZF1hil9YbHSxbgk7JYaFibFpQc0Q_1M",
+      "isCompleted": true
+    },
+    {
+      "id": "14",
+      "caption": "sed do eiusmod",
+      "cover": "https://www.theworkathomewoman.com/wp-content/uploads/20-short-task-websites-1024x684.jpg",
+      "isCompleted": false
+    }
+
+  ],
+  "InProgress": [
+    {
+      "id": "15",
+      "caption": "Lorem ipsum dolor sit amet",
+      "cover": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2018/11/linux-android.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5",
+      "isCompleted": true
+    },
+    {
+      "id": "16",
+      "caption": "sed do eiusmod",
+      "cover": "https://www.theworkathomewoman.com/wp-content/uploads/20-short-task-websites-1024x684.jpg",
+      "isCompleted": false
+    }
+  ],
+  "Done": [
+
+    {
+      "id": "17",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "cover": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/02/computer-room.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5",
+      "isCompleted": true
+    },
+    {
+      "id": "18",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "cover": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2020/09/GoogleTasksAppList-iPhone.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5",
+      "isCompleted": false
+    },
+    {
+      "id": "19",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "cover": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/03/rup-windows11.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5",
+      "isCompleted": true
+    }
+  ]
+}

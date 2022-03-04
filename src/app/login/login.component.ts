@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
-import {AuthenticationService} from "../core/authentication.service";
+import {AuthenticationService} from "../core/services/authentication.service";
 import {Router} from "@angular/router";
 import {Role} from "../core/models/role.enum";
 
@@ -16,7 +16,8 @@ export class LoginComponent implements OnInit {
   });
   formControls = this.loginForm.controls;
   isSubmitted = false;
-isPasswordHide = true;
+  isPasswordHide = true;
+
   constructor(private formBuilder: FormBuilder, private authService: AuthenticationService, private router: Router) {
   }
 
@@ -29,11 +30,14 @@ isPasswordHide = true;
 
     const username = this.loginForm.get('username')?.value;
     const password = this.loginForm.get('password')?.value;
-    const isUserValid = this.authService.isUserAuthValid(username, password);
-    if (isUserValid){
-      const userRole = this.authService.userRole;
-      const nextPage =  userRole === Role.Admin ? 'admin' : 'task';
-      this.router.navigate(['/' + nextPage]);
+    const user = this.authService.validateUser(username, password);
+    if (user) {
+      this.authService.user = user;
+      if (user.role === Role.Admin) {
+        this.router.navigate(['/admin']);
+      } else {
+        this.router.navigate(['/worker/' + user.id]);
+      }
     }
   }
 }

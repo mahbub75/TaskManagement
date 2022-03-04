@@ -14,7 +14,7 @@
   width: 40%;
   padding: 0 1rem 0 1rem;
 
-  @media (max-width: 922px) {
+  @media (min-width: 577px) and (max-width: 922px) {
     width: 80%;
   }
   @media (max-width: 576px) {

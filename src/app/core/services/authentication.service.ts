@@ -16,6 +16,7 @@ export class AuthenticationService {
   ]
 
   constructor() {
+    this._user = this.user;
   }
 
   get user(): User {
@@ -33,7 +34,7 @@ export class AuthenticationService {
     localStorage.setItem(this.userStorageKey, userStr);
   }
 
-  validateUser(username: string, password: string): User|undefined {
+  validateUser(username: string, password: string): User | undefined {
     return this.users.find(user =>
       user.username === username
       &&
@@ -49,11 +50,19 @@ export class AuthenticationService {
     return this._user?.id ?? '';
   }
 
-  get isLogedin(): boolean {
+  get isLoggedIn(): boolean {
     return !!(this._user);
   }
 
-  logout() {
+  get isWorker() {
+    return this._user?.role === Role.Worker;
+  }
+
+  get isAdmin() {
+    return this._user?.role === Role.Admin;
+  }
+
+  signOut() {
     this._user = undefined;
     localStorage.removeItem(this.userStorageKey);
   }

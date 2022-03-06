@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {Router, RouterModule, Routes} from "@angular/router";
+import { RouterModule, Routes} from "@angular/router";
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {dashboardPath} from "../core/routs-constant";
 
 const routes: Routes = [
   {
-    path: 'dashboard',
+    path: dashboardPath,
     component: DashboardComponent
   },
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: dashboardPath,
     pathMatch: 'full'
   }
 

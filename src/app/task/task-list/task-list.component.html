@@ -1,1 +1,30 @@
-<p>task-list works!</p>
+<div class="column-list"
+     *ngIf="((tasks | async) | keyvalue) as columns"
+     cdkDropList
+     cdkDropListOrientation="horizontal"
+     (cdkDropListDropped)="onDrop($event)"
+     cdkDropListGroup
+>
+  <div *ngFor="let column of columns " class="column" cdkDrag>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{column.key}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="column-cards-list"
+             cdkDropList
+             [cdkDropListData]="column.value"
+             (cdkDropListDropped)="onDrop($event)">
+          <app-task-card class="card-box"
+                         *ngFor="let task of column.value"
+                         [task]="task"
+                         (deleteTask)="onDeleteTask(column.value, $event)"
+                         cdkDrag>
+
+          </app-task-card>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>

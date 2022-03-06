@@ -1,1 +1,14 @@
-<p>task-card works!</p>
+
+  <ng-container *ngIf="task">
+    <mat-card>
+    <img mat-card-image [src]="task.cover" alt="task cover">
+    <mat-card-content>
+      <mat-card-subtitle>{{task.caption}}</mat-card-subtitle>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="onDeleteTask(task.id)">delete</button>
+      <button mat-raised-button  color="primary"(click)="onEditTask(task)">edit</button>
+    </mat-card-actions>
+</mat-card>
+  </ng-container>
+

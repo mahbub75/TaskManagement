@@ -1,0 +1,17 @@
+.task-cover{
+  width: 100%;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  row-gap: 1rem;
+  padding: 1rem;
+  .actions{
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+}

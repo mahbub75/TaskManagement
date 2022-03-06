@@ -1,1 +1,10 @@
-<p>task-edit works!</p>
+<img [src]="task.cover" class="task-cover" alt="task cover">
+<form class="form">
+  <mat-form-field appearance="fill">
+    <textarea matInput (change)="onCaptionValueChange($event)">{{task.caption}}</textarea>
+  </mat-form-field>
+  <div class="actions">
+    <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="task">Submit</button>
+  </div>
+ </form>

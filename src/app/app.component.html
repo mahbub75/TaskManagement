@@ -1,1 +1,56 @@
-<router-outlet></router-outlet>
+<div  class="nav-container" >
+  <mat-toolbar
+    *ngIf="isLoggedIn"
+    color="primary"
+    class="toolbar"
+  >
+    <button
+      (click)="drawer.toggle()"
+      aria-label="Toggle sidenav"
+      color="primary"
+      class="toggle-button"
+      mat-icon-button
+      type="button"
+    >
+      <mat-icon aria-hidden="false" aria-label="menu icon"inline>menu</mat-icon>
+    </button>
+
+  </mat-toolbar>
+  <mat-sidenav-container
+    class="sidenav-container"
+  >
+    <mat-sidenav
+      #drawer
+      *ngIf="isLoggedIn"
+      [mode]="'over'"
+      class="sidenav"
+      fixedInViewport="true"
+      fixedTopGap="56"
+    >
+      <div class="nav-bar" >
+        <mat-nav-list>
+<!--          add menu items here-->
+        </mat-nav-list>
+        <div class="sign-out-btn">
+          <button (click)="signOut()" mat-button  color="primary"  mat-button>
+            Sign Out
+          </button>
+        </div>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content >
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+  <mat-toolbar
+    *ngIf="isLoggedIn"
+    color="primary"
+    class="footer"
+  >
+   <span>footer</span>
+
+  </mat-toolbar>
+</div>
+

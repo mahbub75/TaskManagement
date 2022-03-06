@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { BaseComponent } from './components/base/base.component';
 
 
 
 @NgModule({
   declarations: [
-    NotFoundComponent
+    NotFoundComponent,
+    BaseComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    MatSnackBarModule
+  ],
 })
 export class CoreModule { }
